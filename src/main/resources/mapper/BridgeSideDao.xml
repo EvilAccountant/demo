@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.BridgeSideDao">
+
+<!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.example.demo.entity.BridgeSide">
+        <result column="bridge_id" property="bridgeId"/>
+        <result column="side_type" property="sideType"/>
+        <result column="bridge_length" property="bridgeLength"/>
+        <result column="span_comb" property="spanComb"/>
+        <result column="up_clear_height" property="upClearHeight"/>
+    </resultMap>
+
+<!--auto generated Code-->
+    <sql id="all_column">
+        bridge_id,
+        side_type,
+        bridge_length,
+        span_comb,
+        up_clear_height
+    </sql>
+
+<!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO tbl_bridge_side
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.bridgeId != null"> bridge_id, </if>
+            <if test="pojo.sideType != null"> side_type, </if>
+            <if test="pojo.bridgeLength != null"> bridge_length, </if>
+            <if test="pojo.spanComb != null"> span_comb, </if>
+            <if test="pojo.upClearHeight != null"> up_clear_height, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.bridgeId != null"> #{pojo.bridgeId}, </if>
+            <if test="pojo.sideType != null"> #{pojo.sideType}, </if>
+            <if test="pojo.bridgeLength != null"> #{pojo.bridgeLength}, </if>
+            <if test="pojo.spanComb != null"> #{pojo.spanComb}, </if>
+            <if test="pojo.upClearHeight != null"> #{pojo.upClearHeight}, </if>
+        </trim>
+    </insert>
+
+<!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO tbl_bridge_side (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator="," >
+            (
+            #{pojo.bridgeId},
+            #{pojo.sideType},
+            #{pojo.bridgeLength},
+            #{pojo.spanComb},
+            #{pojo.upClearHeight},
+            )
+        </foreach>
+    </insert>
+
+<!--auto generated Code-->
+    <update id="update">
+        UPDATE tbl_bridge_side
+        <set>
+            <if test="pojo.bridgeId != null"> bridge_id = #{pojo.bridgeId}, </if>
+            <if test="pojo.sideType != null"> side_type = #{pojo.sideType}, </if>
+            <if test="pojo.bridgeLength != null"> bridge_length = #{pojo.bridgeLength}, </if>
+            <if test="pojo.spanComb != null"> span_comb = #{pojo.spanComb}, </if>
+            <if test="pojo.upClearHeight != null"> up_clear_height = #{pojo.upClearHeight}, </if>
+        </set>
+         WHERE id = #{pojo.bridgeId}
+    </update>
+
+<!--auto generated Code-->
+    <select id="findData" resultMap="AllColumnMap">
+        SELECT <include refid="all_column"/>
+        FROM tbl_bridge_side
+        <where>
+            <if test="pojo.bridgeId != null"> AND bridge_id = #{pojo.bridgeId} </if>
+            <if test="pojo.sideType != null"> AND side_type = #{pojo.sideType} </if>
+            <if test="pojo.bridgeLength != null"> AND bridge_length = #{pojo.bridgeLength} </if>
+            <if test="pojo.spanComb != null"> AND span_comb = #{pojo.spanComb} </if>
+            <if test="pojo.upClearHeight != null"> AND up_clear_height = #{pojo.upClearHeight} </if>
+        </where>
+    </select>
+
+<!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM tbl_bridge_side where id = #{pojo.id}
+    </delete>
+
+
+
+    <select id="findBridgeIdByNo" parameterType="String" resultType="String">
+        SELECT tbb.id
+        FROM tbl_bridge_base tbb
+        WHERE tbb.highway_bridge_no = #{bridgeNo}
+    </select>
+
+    <select id="findGroupIdByField" parameterType="String" resultType="String">
+        SELECT tpg.id
+        FROM tbl_param_group tpg
+        WHERE tpg.field = #{field}
+    </select>
+
+    <select id="findSideTypeByGroupIdAndName" parameterType="String" resultType="String">
+        SELECT tpt.id
+        FROM tbl_param_type tpt
+        WHERE tpt.group_id = #{groupId}
+        AND tpt.name = #{name}
+    </select>
+
+    <select id="findTypeIdByName" parameterType="String" resultType="String">
+        SELECT tpt.id
+        FROM tbl_param_type tpt
+        WHERE tpt.name = #{name}
+    </select>
+
+
+
+</mapper>

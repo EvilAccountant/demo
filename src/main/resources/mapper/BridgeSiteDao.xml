@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.BridgeSiteDao">
+
+<!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.example.demo.entity.BridgeSite">
+        <result column="id" property="id"/>
+        <result column="bridge_id" property="bridgeId"/>
+        <result column="side_type" property="sideType"/>
+        <result column="site_no" property="siteNo"/>
+        <result column="joint_no" property="jointNo"/>
+        <result column="span" property="span"/>
+    </resultMap>
+
+<!--auto generated Code-->
+    <sql id="all_column">
+        id,
+        bridge_id,
+        side_type,
+        site_no,
+        joint_no,
+        span
+    </sql>
+
+<!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO tbl_bridge_site
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> id, </if>
+            <if test="pojo.bridgeId != null"> bridge_id, </if>
+            <if test="pojo.sideType != null"> side_type, </if>
+            <if test="pojo.siteNo != null"> site_no, </if>
+            <if test="pojo.jointNo != null"> joint_no, </if>
+            <if test="pojo.span != null"> span</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> #{pojo.id}, </if>
+            <if test="pojo.bridgeId != null"> #{pojo.bridgeId}, </if>
+            <if test="pojo.sideType != null"> #{pojo.sideType}, </if>
+            <if test="pojo.siteNo != null"> #{pojo.siteNo}, </if>
+            <if test="pojo.jointNo != null"> #{pojo.jointNo}, </if>
+            <if test="pojo.span != null"> #{pojo.span}</if>
+        </trim>
+    </insert>
+
+<!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO tbl_bridge_site(
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.bridgeId},
+            #{pojo.sideType},
+            #{pojo.siteNo},
+            #{pojo.jointNo},
+            #{pojo.span}
+            )
+        </foreach>
+    </insert>
+
+<!--auto generated Code-->
+    <update id="update">
+        UPDATE tbl_bridge_site
+        <set>
+            <if test="pojo.id != null"> id = #{pojo.id}, </if>
+            <if test="pojo.bridgeId != null"> bridge_id = #{pojo.bridgeId}, </if>
+            <if test="pojo.sideType != null"> side_type = #{pojo.sideType}, </if>
+            <if test="pojo.siteNo != null"> site_no = #{pojo.siteNo}, </if>
+            <if test="pojo.jointNo != null"> joint_no = #{pojo.jointNo}, </if>
+            <if test="pojo.span != null"> span = #{pojo.span}</if>
+        </set>
+         WHERE id = #{pojo.id}
+    </update>
+
+<!--auto generated Code-->
+    <select id="select" resultMap="AllColumnMap">
+        SELECT <include refid="all_column"/>
+        FROM tbl_bridge_site
+        <where>
+            <if test="pojo.id != null"> AND id = #{pojo.id} </if>
+            <if test="pojo.bridgeId != null"> AND bridge_id = #{pojo.bridgeId} </if>
+            <if test="pojo.sideType != null"> AND side_type = #{pojo.sideType} </if>
+            <if test="pojo.siteNo != null"> AND site_no = #{pojo.siteNo} </if>
+            <if test="pojo.jointNo != null"> AND joint_no = #{pojo.jointNo} </if>
+            <if test="pojo.span != null"> AND span = #{pojo.span} </if>
+        </where>
+        LIMIT 1000 
+    </select>
+
+<!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM tbl_bridge_site where id = #{pojo.id}
+    </delete>
+</mapper>

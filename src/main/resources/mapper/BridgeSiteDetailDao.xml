@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.BridgeSiteDetailDao">
+
+<!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.example.demo.entity.BridgeSiteDetail">
+        <result column="bridge_id" property="bridgeId"/>
+        <result column="side_type" property="sideType"/>
+        <result column="site_no" property="siteNo"/>
+        <result column="super_structure_type" property="superStructureType"/>
+        <result column="super_structure_type_name" property="superStructureTypeName"/>
+        <result column="super_material_type" property="superMaterialType"/>
+        <result column="super_force_type" property="superForceType"/>
+        <result column="super_construct_type" property="superConstructType"/>
+        <result column="support_type" property="supportType"/>
+        <result column="support_model" property="supportModel"/>
+        <result column="concrete_strength" property="concreteStrength"/>
+        <result column="mid_span_width" property="midSpanWidth"/>
+        <result column="pier_top_width" property="pierTopWidth"/>
+        <result column="mid_span_height" property="midSpanHeight"/>
+        <result column="pier_top_height" property="pierTopHeight"/>
+        <result column="pier_type" property="pierType"/>
+        <result column="pier_type_name" property="pierTypeName"/>
+        <result column="pier_force_type" property="pierForceType"/>
+        <result column="pier_force_type_name" property="pierForceTypeName"/>
+        <result column="pier_base_type" property="pierBaseType"/>
+        <result column="pier_base_type_name" property="pierBaseTypeName"/>
+        <result column="pier_base_material_type" property="pierBaseMaterialType"/>
+        <result column="pier_base_material_type_name" property="pierBaseMaterialTypeName"/>
+        <result column="pier_base_construct_type" property="pierBaseConstructType"/>
+        <result column="pier_base_construct_type_name" property="pierBaseConstructTypeName"/>
+        <result column="pier_width" property="pierWidth"/>
+        <result column="pier_thickness" property="pierThickness"/>
+        <result column="pier_radius" property="pierRadius"/>
+        <result column="pier_stake_num" property="pierStakeNum"/>
+        <result column="pier_stake_radius" property="pierStakeRadius"/>
+        <result column="abutment_type" property="abutmentType"/>
+        <result column="abutment_force_type" property="abutmentForceType"/>
+        <result column="abutment_base_type" property="abutmentBaseType"/>
+        <result column="abutment_base_material_type" property="abutmentBaseMaterialType"/>
+        <result column="abutment_base_construct_type" property="abutmentBaseConstructType"/>
+        <result column="abutment_width" property="abutmentWidth"/>
+        <result column="abutment_thickness" property="abutmentThickness"/>
+        <result column="abutment_radius" property="abutmentRadius"/>
+        <result column="abutment_stake_num" property="abutmentStakeNum"/>
+        <result column="abutment_stake_radius" property="abutmentStakeRadius"/>
+        <result column="super_force_type_name" property="superForceTypeName"/>
+        <result column="super_construct_type_name" property="superConstructTypeName"/>
+        <result column="abutment_base_construct_type_name" property="abutmentBaseConstructTypeName"/>
+        <result column="abutment_base_material_type_name" property="abutmentBaseMaterialTypeName"/>
+        <result column="abutment_base_type_name" property="abutmentBaseTypeName"/>
+        <result column="abutment_force_type_name" property="abutmentForceTypeName"/>
+        <result column="abutment_type_name" property="abutmentTypeName"/>
+        <result column="underpass_clearance" property="underpassClearance"/>
+        <result column="underpass_purpose_name" property="underpassPurposeName"/>
+    </resultMap>
+
+<!--auto generated Code-->
+    <sql id="all_column">
+        bridge_id,
+        side_type,
+        site_no,
+        super_structure_type,
+        super_structure_type_name,
+        super_material_type,
+        super_force_type,
+        super_construct_type,
+        support_type,
+        support_model,
+        concrete_strength,
+        mid_span_width,
+        pier_top_width,
+        mid_span_height,
+        pier_top_height,
+        pier_type,
+        pier_type_name,
+        pier_force_type,
+        pier_force_type_name,
+        pier_base_type,
+        pier_base_type_name,
+        pier_base_material_type,
+        pier_base_material_type_name,
+        pier_base_construct_type,
+        pier_base_construct_type_name,
+        pier_width,
+        pier_thickness,
+        pier_radius,
+        pier_stake_num,
+        pier_stake_radius,
+        abutment_type,
+        abutment_force_type,
+        abutment_base_type,
+        abutment_base_material_type,
+        abutment_base_construct_type,
+        abutment_width,
+        abutment_thickness,
+        abutment_radius,
+        abutment_stake_num,
+        abutment_stake_radius,
+        super_force_type_name,
+        super_construct_type_name,
+        abutment_base_construct_type_name,
+        abutment_base_material_type_name,
+        abutment_base_type_name,
+        abutment_force_type_name,
+        abutment_type_name,
+        underpass_clearance,
+        underpass_purpose_name
+    </sql>
+
+    <sql id="insert_column">
+        bridge_id,
+        side_type,
+        site_no
+    </sql>
+
+<!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO tbl_bridge_site_detail
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.bridgeId != null"> bridge_id, </if>
+            <if test="pojo.sideType != null"> side_type, </if>
+            <if test="pojo.siteNo != null"> site_no, </if>
+            <if test="pojo.superStructureType != null"> super_structure_type, </if>
+            <if test="pojo.superStructureTypeName != null"> super_structure_type_name, </if>
+            <if test="pojo.superMaterialType != null"> super_material_type, </if>
+            <if test="pojo.superForceType != null"> super_force_type, </if>
+            <if test="pojo.superConstructType != null"> super_construct_type, </if>
+            <if test="pojo.supportType != null"> support_type, </if>
+            <if test="pojo.supportModel != null"> support_model, </if>
+            <if test="pojo.concreteStrength != null"> concrete_strength, </if>
+            <if test="pojo.midSpanWidth != null"> mid_span_width, </if>
+            <if test="pojo.pierTopWidth != null"> pier_top_width, </if>
+            <if test="pojo.midSpanHeight != null"> mid_span_height, </if>
+            <if test="pojo.pierTopHeight != null"> pier_top_height, </if>
+            <if test="pojo.pierType != null"> pier_type, </if>
+            <if test="pojo.pierTypeName != null"> pier_type_name, </if>
+            <if test="pojo.pierForceType != null"> pier_force_type, </if>
+            <if test="pojo.pierForceTypeName != null"> pier_force_type_name, </if>
+            <if test="pojo.pierBaseType != null"> pier_base_type, </if>
+            <if test="pojo.pierBaseTypeName != null"> pier_base_type_name, </if>
+            <if test="pojo.pierBaseMaterialType != null"> pier_base_material_type, </if>
+            <if test="pojo.pierBaseMaterialTypeName != null"> pier_base_material_type_name, </if>
+            <if test="pojo.pierBaseConstructType != null"> pier_base_construct_type, </if>
+            <if test="pojo.pierBaseConstructTypeName != null"> pier_base_construct_type_name, </if>
+            <if test="pojo.pierWidth != null"> pier_width, </if>
+            <if test="pojo.pierThickness != null"> pier_thickness, </if>
+            <if test="pojo.pierRadius != null"> pier_radius, </if>
+            <if test="pojo.pierStakeNum != null"> pier_stake_num, </if>
+            <if test="pojo.pierStakeRadius != null"> pier_stake_radius, </if>
+            <if test="pojo.abutmentType != null"> abutment_type, </if>
+            <if test="pojo.abutmentForceType != null"> abutment_force_type, </if>
+            <if test="pojo.abutmentBaseType != null"> abutment_base_type, </if>
+            <if test="pojo.abutmentBaseMaterialType != null"> abutment_base_material_type, </if>
+            <if test="pojo.abutmentBaseConstructType != null"> abutment_base_construct_type, </if>
+            <if test="pojo.abutmentWidth != null"> abutment_width, </if>
+            <if test="pojo.abutmentThickness != null"> abutment_thickness, </if>
+            <if test="pojo.abutmentRadius != null"> abutment_radius, </if>
+            <if test="pojo.abutmentStakeNum != null"> abutment_stake_num, </if>
+            <if test="pojo.abutmentStakeRadius != null"> abutment_stake_radius, </if>
+            <if test="pojo.superForceTypeName != null"> super_force_type_name, </if>
+            <if test="pojo.superConstructTypeName != null"> super_construct_type_name, </if>
+            <if test="pojo.abutmentBaseConstructTypeName != null"> abutment_base_construct_type_name, </if>
+            <if test="pojo.abutmentBaseMaterialTypeName != null"> abutment_base_material_type_name, </if>
+            <if test="pojo.abutmentBaseTypeName != null"> abutment_base_type_name, </if>
+            <if test="pojo.abutmentForceTypeName != null"> abutment_force_type_name, </if>
+            <if test="pojo.abutmentTypeName != null"> abutment_type_name, </if>
+            <if test="pojo.underpassClearance != null"> underpass_clearance, </if>
+            <if test="pojo.underpassPurposeName != null"> underpass_purpose_name, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.bridgeId != null"> #{pojo.bridgeId}, </if>
+            <if test="pojo.sideType != null"> #{pojo.sideType}, </if>
+            <if test="pojo.siteNo != null"> #{pojo.siteNo}, </if>
+            <if test="pojo.superStructureType != null"> #{pojo.superStructureType}, </if>
+            <if test="pojo.superStructureTypeName != null"> #{pojo.superStructureTypeName}, </if>
+            <if test="pojo.superMaterialType != null"> #{pojo.superMaterialType}, </if>
+            <if test="pojo.superForceType != null"> #{pojo.superForceType}, </if>
+            <if test="pojo.superConstructType != null"> #{pojo.superConstructType}, </if>
+            <if test="pojo.supportType != null"> #{pojo.supportType}, </if>
+            <if test="pojo.supportModel != null"> #{pojo.supportModel}, </if>
+            <if test="pojo.concreteStrength != null"> #{pojo.concreteStrength}, </if>
+            <if test="pojo.midSpanWidth != null"> #{pojo.midSpanWidth}, </if>
+            <if test="pojo.pierTopWidth != null"> #{pojo.pierTopWidth}, </if>
+            <if test="pojo.midSpanHeight != null"> #{pojo.midSpanHeight}, </if>
+            <if test="pojo.pierTopHeight != null"> #{pojo.pierTopHeight}, </if>
+            <if test="pojo.pierType != null"> #{pojo.pierType}, </if>
+            <if test="pojo.pierTypeName != null"> #{pojo.pierTypeName}, </if>
+            <if test="pojo.pierForceType != null"> #{pojo.pierForceType}, </if>
+            <if test="pojo.pierForceTypeName != null"> #{pojo.pierForceTypeName}, </if>
+            <if test="pojo.pierBaseType != null"> #{pojo.pierBaseType}, </if>
+            <if test="pojo.pierBaseTypeName != null"> #{pojo.pierBaseTypeName}, </if>
+            <if test="pojo.pierBaseMaterialType != null"> #{pojo.pierBaseMaterialType}, </if>
+            <if test="pojo.pierBaseMaterialTypeName != null"> #{pojo.pierBaseMaterialTypeName}, </if>
+            <if test="pojo.pierBaseConstructType != null"> #{pojo.pierBaseConstructType}, </if>
+            <if test="pojo.pierBaseConstructTypeName != null"> #{pojo.pierBaseConstructTypeName}, </if>
+            <if test="pojo.pierWidth != null"> #{pojo.pierWidth}, </if>
+            <if test="pojo.pierThickness != null"> #{pojo.pierThickness}, </if>
+            <if test="pojo.pierRadius != null"> #{pojo.pierRadius}, </if>
+            <if test="pojo.pierStakeNum != null"> #{pojo.pierStakeNum}, </if>
+            <if test="pojo.pierStakeRadius != null"> #{pojo.pierStakeRadius}, </if>
+            <if test="pojo.abutmentType != null"> #{pojo.abutmentType}, </if>
+            <if test="pojo.abutmentForceType != null"> #{pojo.abutmentForceType}, </if>
+            <if test="pojo.abutmentBaseType != null"> #{pojo.abutmentBaseType}, </if>
+            <if test="pojo.abutmentBaseMaterialType != null"> #{pojo.abutmentBaseMaterialType}, </if>
+            <if test="pojo.abutmentBaseConstructType != null"> #{pojo.abutmentBaseConstructType}, </if>
+            <if test="pojo.abutmentWidth != null"> #{pojo.abutmentWidth}, </if>
+            <if test="pojo.abutmentThickness != null"> #{pojo.abutmentThickness}, </if>
+            <if test="pojo.abutmentRadius != null"> #{pojo.abutmentRadius}, </if>
+            <if test="pojo.abutmentStakeNum != null"> #{pojo.abutmentStakeNum}, </if>
+            <if test="pojo.abutmentStakeRadius != null"> #{pojo.abutmentStakeRadius}, </if>
+            <if test="pojo.superForceTypeName != null"> #{pojo.superForceTypeName}, </if>
+            <if test="pojo.superConstructTypeName != null"> #{pojo.superConstructTypeName}, </if>
+            <if test="pojo.abutmentBaseConstructTypeName != null"> #{pojo.abutmentBaseConstructTypeName}, </if>
+            <if test="pojo.abutmentBaseMaterialTypeName != null"> #{pojo.abutmentBaseMaterialTypeName}, </if>
+            <if test="pojo.abutmentBaseTypeName != null"> #{pojo.abutmentBaseTypeName}, </if>
+            <if test="pojo.abutmentForceTypeName != null"> #{pojo.abutmentForceTypeName}, </if>
+            <if test="pojo.abutmentTypeName != null"> #{pojo.abutmentTypeName}, </if>
+            <if test="pojo.underpassClearance != null"> #{pojo.underpassClearance}, </if>
+            <if test="pojo.underpassPurposeName != null"> #{pojo.underpassPurposeName}, </if>
+        </trim>
+    </insert>
+
+<!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO tbl_bridge_site_detail(
+        <include refid="insert_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.bridgeId},
+            #{pojo.sideType},
+            #{pojo.siteNo}
+            )
+        </foreach>
+    </insert>
+
+<!--auto generated Code-->
+    <update id="update">
+        UPDATE tbl_bridge_site_detail
+        <set>
+            super_structure_type = #{pojo.superStructureType},
+            super_material_type = #{pojo.superMaterialType},
+            super_force_type = #{pojo.superForceType},
+            super_construct_type = #{pojo.superConstructType},
+            support_type = #{pojo.supportType},
+            support_model = #{pojo.supportModel},
+            concrete_strength = #{pojo.concreteStrength},
+            mid_span_width = #{pojo.midSpanWidth},
+            pier_top_width = #{pojo.pierTopWidth},
+            mid_span_height = #{pojo.midSpanHeight},
+            pier_top_height = #{pojo.pierTopHeight},
+            pier_type = #{pojo.pierType},
+            pier_force_type = #{pojo.pierForceType},
+            pier_base_type = #{pojo.pierBaseType},
+            pier_base_material_type = #{pojo.pierBaseMaterialType},
+            pier_base_construct_type = #{pojo.pierBaseConstructType},
+            pier_width = #{pojo.pierWidth},
+            pier_thickness = #{pojo.pierThickness},
+            pier_radius = #{pojo.pierRadius},
+            pier_stake_num = #{pojo.pierStakeNum},
+            pier_stake_radius = #{pojo.pierStakeRadius},
+            abutment_type = #{pojo.abutmentType},
+            abutment_force_type = #{pojo.abutmentForceType},
+            abutment_base_type = #{pojo.abutmentBaseType},
+            abutment_base_material_type = #{pojo.abutmentBaseMaterialType},
+            abutment_base_construct_type = #{pojo.abutmentBaseConstructType},
+            abutment_width = #{pojo.abutmentWidth},
+            abutment_thickness = #{pojo.abutmentThickness},
+            abutment_radius = #{pojo.abutmentRadius},
+            abutment_stake_num = #{pojo.abutmentStakeNum},
+            abutment_stake_radius = #{pojo.abutmentStakeRadius},
+        </set>
+          WHERE bridge_id = #{pojo.bridgeId}
+          AND side_type = #{pojo.sideType}
+          AND site_no = #{pojo.siteNo}
+    </update>
+
+<!--auto generated Code-->
+    <select id="select" resultMap="AllColumnMap">
+        SELECT <include refid="all_column"/>
+        FROM tbl_bridge_site_detail
+        <where>
+            <if test="pojo.bridgeId != null"> AND bridge_id = #{pojo.bridgeId} </if>
+            <if test="pojo.sideType != null"> AND side_type = #{pojo.sideType} </if>
+            <if test="pojo.siteNo != null"> AND site_no = #{pojo.siteNo} </if>
+            <if test="pojo.superStructureType != null"> AND super_structure_type = #{pojo.superStructureType} </if>
+            <if test="pojo.superStructureTypeName != null"> AND super_structure_type_name = #{pojo.superStructureTypeName} </if>
+            <if test="pojo.superMaterialType != null"> AND super_material_type = #{pojo.superMaterialType} </if>
+            <if test="pojo.superForceType != null"> AND super_force_type = #{pojo.superForceType} </if>
+            <if test="pojo.superConstructType != null"> AND super_construct_type = #{pojo.superConstructType} </if>
+            <if test="pojo.supportType != null"> AND support_type = #{pojo.supportType} </if>
+            <if test="pojo.supportModel != null"> AND support_model = #{pojo.supportModel} </if>
+            <if test="pojo.concreteStrength != null"> AND concrete_strength = #{pojo.concreteStrength} </if>
+            <if test="pojo.midSpanWidth != null"> AND mid_span_width = #{pojo.midSpanWidth} </if>
+            <if test="pojo.pierTopWidth != null"> AND pier_top_width = #{pojo.pierTopWidth} </if>
+            <if test="pojo.midSpanHeight != null"> AND mid_span_height = #{pojo.midSpanHeight} </if>
+            <if test="pojo.pierTopHeight != null"> AND pier_top_height = #{pojo.pierTopHeight} </if>
+            <if test="pojo.pierType != null"> AND pier_type = #{pojo.pierType} </if>
+            <if test="pojo.pierTypeName != null"> AND pier_type_name = #{pojo.pierTypeName} </if>
+            <if test="pojo.pierForceType != null"> AND pier_force_type = #{pojo.pierForceType} </if>
+            <if test="pojo.pierForceTypeName != null"> AND pier_force_type_name = #{pojo.pierForceTypeName} </if>
+            <if test="pojo.pierBaseType != null"> AND pier_base_type = #{pojo.pierBaseType} </if>
+            <if test="pojo.pierBaseTypeName != null"> AND pier_base_type_name = #{pojo.pierBaseTypeName} </if>
+            <if test="pojo.pierBaseMaterialType != null"> AND pier_base_material_type = #{pojo.pierBaseMaterialType} </if>
+            <if test="pojo.pierBaseMaterialTypeName != null"> AND pier_base_material_type_name = #{pojo.pierBaseMaterialTypeName} </if>
+            <if test="pojo.pierBaseConstructType != null"> AND pier_base_construct_type = #{pojo.pierBaseConstructType} </if>
+            <if test="pojo.pierBaseConstructTypeName != null"> AND pier_base_construct_type_name = #{pojo.pierBaseConstructTypeName} </if>
+            <if test="pojo.pierWidth != null"> AND pier_width = #{pojo.pierWidth} </if>
+            <if test="pojo.pierThickness != null"> AND pier_thickness = #{pojo.pierThickness} </if>
+            <if test="pojo.pierRadius != null"> AND pier_radius = #{pojo.pierRadius} </if>
+            <if test="pojo.pierStakeNum != null"> AND pier_stake_num = #{pojo.pierStakeNum} </if>
+            <if test="pojo.pierStakeRadius != null"> AND pier_stake_radius = #{pojo.pierStakeRadius} </if>
+            <if test="pojo.abutmentType != null"> AND abutment_type = #{pojo.abutmentType} </if>
+            <if test="pojo.abutmentForceType != null"> AND abutment_force_type = #{pojo.abutmentForceType} </if>
+            <if test="pojo.abutmentBaseType != null"> AND abutment_base_type = #{pojo.abutmentBaseType} </if>
+            <if test="pojo.abutmentBaseMaterialType != null"> AND abutment_base_material_type = #{pojo.abutmentBaseMaterialType} </if>
+            <if test="pojo.abutmentBaseConstructType != null"> AND abutment_base_construct_type = #{pojo.abutmentBaseConstructType} </if>
+            <if test="pojo.abutmentWidth != null"> AND abutment_width = #{pojo.abutmentWidth} </if>
+            <if test="pojo.abutmentThickness != null"> AND abutment_thickness = #{pojo.abutmentThickness} </if>
+            <if test="pojo.abutmentRadius != null"> AND abutment_radius = #{pojo.abutmentRadius} </if>
+            <if test="pojo.abutmentStakeNum != null"> AND abutment_stake_num = #{pojo.abutmentStakeNum} </if>
+            <if test="pojo.abutmentStakeRadius != null"> AND abutment_stake_radius = #{pojo.abutmentStakeRadius} </if>
+            <if test="pojo.superForceTypeName != null"> AND super_force_type_name = #{pojo.superForceTypeName} </if>
+            <if test="pojo.superConstructTypeName != null"> AND super_construct_type_name = #{pojo.superConstructTypeName} </if>
+            <if test="pojo.abutmentBaseConstructTypeName != null"> AND abutment_base_construct_type_name = #{pojo.abutmentBaseConstructTypeName} </if>
+            <if test="pojo.abutmentBaseMaterialTypeName != null"> AND abutment_base_material_type_name = #{pojo.abutmentBaseMaterialTypeName} </if>
+            <if test="pojo.abutmentBaseTypeName != null"> AND abutment_base_type_name = #{pojo.abutmentBaseTypeName} </if>
+            <if test="pojo.abutmentForceTypeName != null"> AND abutment_force_type_name = #{pojo.abutmentForceTypeName} </if>
+            <if test="pojo.abutmentTypeName != null"> AND abutment_type_name = #{pojo.abutmentTypeName} </if>
+            <if test="pojo.underpassClearance != null"> AND underpass_clearance = #{pojo.underpassClearance} </if>
+            <if test="pojo.underpassPurposeName != null"> AND underpass_purpose_name = #{pojo.underpassPurposeName} </if>
+        </where>
+        LIMIT 1000 
+    </select>
+
+<!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM tbl_bridge_site_detail where id = #{pojo.id}
+    </delete>
+</mapper>
